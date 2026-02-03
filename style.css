@@ -1,0 +1,360 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* ================= HEADER ================= */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+.logo {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.header nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.header nav a:hover {
+  color: #d6b36a;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  min-height: 100vh;
+  padding: 120px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: linear-gradient(to bottom, #111, #000);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+}
+
+.hero p {
+  margin-top: 15px;
+  color: #aaa;
+}
+
+/* ================= ABOUT ================= */
+.about {
+  background: #111;
+}
+
+.about .content {
+  max-width: 700px;
+}
+
+.about p {
+  margin-top: 15px;
+  color: #bbb;
+}
+
+/* ================= PROJECTS ================= */
+.projects {
+  background: #000;
+}
+
+.projects h2 {
+  margin-bottom: 40px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  height: 300px;
+  background: linear-gradient(135deg, #333, #111);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* ================= PROCESS ================= */
+.process {
+  background: #111;
+}
+
+.steps {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.step {
+  flex: 1;
+  min-width: 150px;
+  padding: 30px;
+  border: 1px solid #333;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  background: #000;
+}
+
+.contact p {
+  margin-top: 10px;
+  color: #bbb;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  padding: 25px;
+  text-align: center;
+  background: #000;
+  color: #777;
+  font-size: 14px;
+}
+
+/* ================= ANIMATIONS ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .header {
+    padding: 0 25px;
+  }
+}
+
+/* ================= VILLA PAGE ================= */
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HERO */
+.villa-hero {
+  height: 70vh;
+  background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.villa-hero h2 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  background: rgba(0,0,0,0.6);
+  padding: 10px 20px;
+}
+
+.villa-hero p {
+  margin-top: 10px;
+  background: rgba(0,0,0,0.6);
+  padding: 6px 16px;
+}
+
+/* DETAILS */
+.villa-details {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.villa-details h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.villa-info {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.villa-info li {
+  margin-bottom: 10px;
+}
+
+/* GALLERY */
+.villa-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+}
+
+.villa-gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.villa-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ================= PROCESS SECTION (INDEX) ================= */
+
+.process-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 40px;
+}
+
+.process-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.process-card {
+  padding: 40px 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.05);
+}
+
+.process-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.process-card p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Light mode support */
+body.light .process-card {
+  border-color: rgba(0,0,0,0.15);
+}
+
+body.light .process-card:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.hero {
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card:nth-child(1) {
+  background-image: url("modern-villa.jpg");
+}
+
+.project-card:nth-child(2) {
+  background-image: url("urban-office.jpg");
+}
+
+.project-card:nth-child(3) {
+  background-image: url("art-museum.jpg");
+}
+
+.project-card {
+  background-size: cover;
+  background-position: center;
+}
+
+.process-card img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+
